@@ -5,7 +5,7 @@ import ListItem from './ListItem'
 const Content = ({items,handleCheck,removeItem}) => {
   return (
     <main>
-      {(items && items.length) ? (
+      {items  ? (
         <ul>
           {items.map((item)=>(
             <ListItem
