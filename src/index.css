@@ -70,11 +70,22 @@ ul li::before {
 
 .item {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between; /* push delete icon to the end */
   align-items: center;
-  padding: 0.5rem 0 0.5rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   margin: 0.25rem 0;
   background-color: #eee;
+}
+
+/* ensure label takes remaining space and has breathing room */
+.item > label {
+  flex-grow: 1;
+  margin-right: 0.5rem;
+}
+
+/* spacing around the svg (delete/exit icon) */
+.item svg {
+  margin-left: 0.5rem;
 }
 
 .item:first-child {
@@ -109,6 +120,46 @@ ul li::before {
   font-size: 1rem;
   color: steelblue;
   cursor: pointer;
+}
+
+/* editing text input spans remaining space */
+.item input[type="text"] {
+  flex-grow: 1;
+  font-size: 0.75rem;
+  padding: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+/* topic navigation UI */
+.topicSelector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+.topicSelector button {
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  background: #ddd;
+  cursor: pointer;
+}
+.topicSelector button.active {
+  background: mediumblue;
+  color: white;
+}
+
+/* small '×' to delete topic */
+.topicSelector .removeTopic {
+  margin-left: 0.5rem;
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+}
+.topicSelector .removeTopic:hover {
+  color: darkred;
 }
 
 .item svg:focus,

@@ -1,4 +1,4 @@
-const SearchItem = ({ searchItem, setSearch }) => {
+const SearchItem = ({ search, setSearch }) => {
     return (
         <form className='searchForm' onSubmit={(e) => e.preventDefault()}>
             <label htmlFor='search'>Search</label>
@@ -7,7 +7,7 @@ const SearchItem = ({ searchItem, setSearch }) => {
                 type='text'
                 role='searchbox'
                 placeholder='Search Items'
-                value={searchItem}
+                value={search}
                 onChange={(e) => setSearch(e.target.value)}
             />
         </form>
